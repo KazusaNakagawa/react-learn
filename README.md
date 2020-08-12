@@ -26,7 +26,6 @@ $ docker build -t <image name> .
 ```
 $ docker run -it --name react-app -p 3000:3000 -v ~/react/react-app:/usr/app/react-app react
 ```
-
 - create react
 ```
 $ create-react-app react-on-docker
