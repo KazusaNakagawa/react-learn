@@ -36,7 +36,7 @@ $ create-react-app react-on-docker
 $ cd react-on-docker
 $ npm start
 ```
-# 再度作業
+## 再度作業
 
 ### コンテナ立ち上げ
 ```
