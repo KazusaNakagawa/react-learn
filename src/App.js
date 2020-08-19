@@ -1,31 +1,37 @@
 import React from 'react';
 
-// function App() {
-//   const react = 'React lear'
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <h1>{react}</h1>
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//       </header>
-//     </div>
-//   );
-// }
 const App = () => {
+  const profiles = [
+    { name: "Saki", age: 17},
+    { name: "Natu", age: 15},
+    { name: "NoName",},
+    { age: 200}
+  ]
   return (
     <div>
-      < Cat/>
-      < Cat/>
-      < Cat/>
-      < Cat/>
+      {
+        profiles.map((profile, index) => {
+          return <User name={profile.name} age={profile.age} key={index} />
+        })
+      }
     </div>
   )
 }
 
-const Cat = () => {
-  return <div>Meow!</div>
+const User = (props) => {
+  return (
+  <div>
+    <ul>
+      <li>Hi, I am {props.name} and {props.age} years old! </li>
+    </ul>
+  </div>
+  )
+}
+
+// defaultの値: 引数にない時の値を指定できる
+User.defaultProps = {
+  name: "Gest",
+  age: 0
 }
 
 export default App;
