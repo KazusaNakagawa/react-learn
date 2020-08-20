@@ -2,24 +2,6 @@
 React
 
 
-``` dockerfile
-# dockerfile
-FROM alpine
-ENV wkdir react-app
-
-WORKDIR /usr/app/$wkdir
-
-RUN apk add nodejs
-RUN apk add npm
-RUN npm i -g create-react-app
-
-ENTRYPOINT sh
-```
-```
-# build {-t: add imege name}
-$ docker build -t <image name> .
-```
-
 - docker起動: マウント場所  
   host : ~/react/react-app  
   container : /usr/app/react-app
@@ -34,6 +16,7 @@ $ create-react-app react-on-docker
 ## 移動、実行
 ```
 $ cd react-on-docker
+
 $ npm start
 ```
 ## 再度作業
