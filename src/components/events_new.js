@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, isPristine } from 'redux-form';
 import { Link } from 'react-router-dom'
 
 import { postEvent } from '../actions';
@@ -31,7 +31,11 @@ class EventsNew extends Component {
   }
 
   render() {
-    const { handleSubmit } = this.props
+    /* 
+      pristine   : 未入力時選択不可に
+      submitting : 重複押し不可に
+    */
+    const { handleSubmit, pristine, submitting } = this.props
     console.log({handleSubmit})
 
     return (
@@ -40,7 +44,7 @@ class EventsNew extends Component {
         <div><Field label="Body" name="body" type="text" component={this.renderField} /></div>
         
         <div>
-          <input type="submit" value="Submit" disabled={false} />
+          <input type="submit" value="Submit" disabled={pristine || submitting} />
           <Link to="/" >Cancel</Link>
         </div>
 
