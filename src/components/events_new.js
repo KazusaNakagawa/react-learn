@@ -11,7 +11,12 @@ class EventsNew extends Component {
   renderField(field) {
     const { input, label, type, meta: { touched, error } } = field
 
-    return (<div></div>)
+    return (
+      <div>
+        <input {...input} placeholder={label} type={type} />
+        {touched && error && <span>{error}</span>} 
+      </div>
+    )
   }
 
   render() {
@@ -29,6 +34,9 @@ class EventsNew extends Component {
 
 const validate = values => {
   const errors = {}
+
+  if (!values.title) errors.title = "Enter a title, please."
+  if (!values.body) errors.body = "Enter a body, please."
 
   return errors
 }
