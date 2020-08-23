@@ -63,7 +63,6 @@ const validate = values => {
   return errors
 }
 
-
 // args state要らない: 理解してなくて、submit 反映されなくて苦戦した
 // const mapDispatchToProps = state => ({ postEvent })
 const mapDispatchToProps = ({ postEvent })
