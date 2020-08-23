@@ -1,5 +1,6 @@
 // 状態を管理する
 import { combineReducers } from 'redux'
-import count from './count'
+import { reducer as form } from 'redux-form'
+import events from './events'
 
-export default combineReducers({ count })
+export default combineReducers({ events, form })
